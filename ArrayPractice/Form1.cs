@@ -136,12 +136,30 @@ namespace ArrayPractice
                 }
             }
 
-
             //2. swap and display all values between array1 and array2
+            //make another array and put a copy of array 1 in it
+            int[] array1copy = new int[10];
+            array1.CopyTo(array1copy, 0);
 
-            //make another array that holds the copy
+            //put array 2 in array 1
+            array2.CopyTo(array1, 0);
 
+            //put the copy of array 1 in array 2
+            array1copy.CopyTo(array2, 0);
 
+            //display new array 1 (old array 2)
+            swap1Output.Text = "";
+            for (int i = 0; i < array1.Length; i++)
+            {
+                swap1Output.Text += array1[i] + " ";
+            }
+
+            //display new array 2 (old array 1)
+            swap2Output.Text = "";
+            for (int i = 0; i < array1.Length; i++)
+            {
+                swap2Output.Text += array2[i] + " ";
+            }
         }
     }
 }
